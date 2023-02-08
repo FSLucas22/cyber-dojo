@@ -1,0 +1,25 @@
+{
+  "image_name": "cyberdojofoundation/java_junit:c23ed9e",
+  "display_name": "Java 18, JUnit",
+  "filename_extension": [
+    ".java"
+  ],
+  "max_seconds": 10,
+  "tab_size": 4,
+  "progress_regexs": [
+    "Failures (\\d)\\:",
+    "^\\[\\s+(\\d+) tests successful\\s+\\]"
+  ],
+  "exercise": "Fizz Buzz",
+  "version": 2,
+  "created": [
+    2023,
+    2,
+    7,
+    23,
+    47,
+    10,
+    207363
+  ],
+  "id": "hVfKmW"
+}

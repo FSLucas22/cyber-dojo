@@ -1,0 +1,26 @@
+.
++-- JUnit Jupiter [OK]
+| +-- TestNumbers [OK]
+| | +-- test should call display two times [OK]
+| | '-- test should call display with values from fizzbuzz [OK]
+| '-- FizzbuzzTest [OK]
+|   +-- test convertValue returns fizz on multiples of three not five [OK]
+|   +-- test convertValue returns fizzbuzz on multiples of three and five [OK]
+|   +-- test convertValue returns buzz on multiples of five not three [OK]
+|   '-- test convertValue returns same value on non multiples of three or five [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 102 ms
+[         4 containers found      ]
+[         0 containers skipped    ]
+[         4 containers started    ]
+[         0 containers aborted    ]
+[         4 containers successful ]
+[         0 containers failed     ]
+[         6 tests found           ]
+[         0 tests skipped         ]
+[         6 tests started         ]
+[         0 tests aborted         ]
+[         6 tests successful      ]
+[         0 tests failed          ]
+
