@@ -1,0 +1,58 @@
+biro
+bior
+brio
+broi
+bori
+boir
+ibro
+ibor
+irbo
+irob
+iorb
+iobr
+ribo
+riob
+rbio
+rboi
+robi
+roib
+oirb
+oibr
+orib
+orbi
+obri
+obir
+.
++-- JUnit Jupiter [OK]
+| +-- AnagramsTest [OK]
+| | +-- should_display_all_anagrams_of_generator() [OK]
+| | '-- should_display_all_anagrams() [OK]
+| +-- AnagramGeneratorImpTest [OK]
+| | +-- test_should_have_factorial_elements() [OK]
+| | +-- test_should_call_swapper_factorial_minus_one_times() [OK]
+| | +-- test_should_have_size_one_with_single_letter() [OK]
+| | +-- test_should_call_swapper_once() [OK]
+| | '-- test_should_contain_original_word() [OK]
+| '-- SwapperImpTest [OK]
+|   +-- test_should_return_element_with_equal_length() [OK]
+|   +-- test_should_swap_first_letter_and_letter_in_index() [OK]
+|   +-- test_should_return_element_with_same_letters() [OK]
+|   +-- test_should_return_different_element() [OK]
+|   +-- test_should_return_same_word_with_index_zero() [OK]
+|   '-- test_should_swap_letters_in_indexes() [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 156 ms
+[         5 containers found      ]
+[         0 containers skipped    ]
+[         5 containers started    ]
+[         0 containers aborted    ]
+[         5 containers successful ]
+[         0 containers failed     ]
+[        13 tests found           ]
+[         0 tests skipped         ]
+[        13 tests started         ]
+[         0 tests aborted         ]
+[        13 tests successful      ]
+[         0 tests failed          ]
+
