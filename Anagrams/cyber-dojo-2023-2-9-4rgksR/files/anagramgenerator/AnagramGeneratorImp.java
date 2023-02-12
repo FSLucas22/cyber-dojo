@@ -11,14 +11,14 @@ public class AnagramGeneratorImp implements AnagramGenerator {
     String word, Collection<String> receiver) {
         var fixedLetter = word.charAt(0);
         var remainder = word.substring(1);
-        var remainderAnagrams = getAnagrams(remainder, new ArrayList<String>());
+        var remainderAnagrams = generateAnagrams(remainder, new ArrayList<>());
         for (String anagram : remainderAnagrams) {
             receiver.add(fixedLetter + anagram);
         }
     }
     @Override
-    public Collection<String> getAnagrams(String word,
-                                          Collection<String> receiver) {
+    public Collection<String> generateAnagrams(String word,
+                                               Collection<String> receiver) {
         if (word.length() < 2) {
             receiver.add(word);
             return receiver;

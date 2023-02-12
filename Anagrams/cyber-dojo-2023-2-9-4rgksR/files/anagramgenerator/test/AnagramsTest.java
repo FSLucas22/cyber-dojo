@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class AnagramsTest {
     private Anagrams anagrams;
     private MockDisplay display;
@@ -16,7 +15,7 @@ public class AnagramsTest {
     }
     @Test
     void should_display_all_anagrams_of_generator() {
-        var permutations = generator.getAnagrams(word);
+        var permutations = generator.generateAnagrams(word);
         anagrams.showAnagrams(word);
         assertEquals(permutations.size(), display.getCallCount("show"));
     }
