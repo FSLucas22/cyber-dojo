@@ -3,7 +3,7 @@
 | +-- TestNumbers [OK]
 | | +-- test should call display two times [OK]
 | | '-- test should call display with values from fizzbuzz [OK]
-| '-- FizzbuzzTest [OK]
+| '-- TestFizzbuzz [OK]
 |   +-- test convertValue returns fizz on multiples of three not five [OK]
 |   +-- test convertValue returns fizzbuzz on multiples of three and five [OK]
 |   +-- test convertValue returns buzz on multiples of five not three [OK]
