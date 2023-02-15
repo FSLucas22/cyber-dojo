@@ -1,6 +1,10 @@
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 
 public class AnagramsTest {
     private Anagrams anagrams;
@@ -14,11 +18,14 @@ public class AnagramsTest {
         generator = new AnagramGeneratorImp(new SwapperImp());
         anagrams = new Anagrams(generator, display);
     }
+
     @Test
     void should_display_all_anagrams_of_generator() {
-        var permutations = generator.getAnagrams(word);
+        List<String> anagramsList = new ArrayList<>();
+        Consumer<String> receiver = anagramsList::add;
+        generator.generateAllAnagrams(word, receiver);
         anagrams.showAnagrams(word);
-        assertEquals(permutations.size(), display.getCallCount("show"));
+        Assertions.assertEquals(anagramsList.size(), display.getCallCount("show"));
     }
     @Test
     void should_display_all_anagrams() {

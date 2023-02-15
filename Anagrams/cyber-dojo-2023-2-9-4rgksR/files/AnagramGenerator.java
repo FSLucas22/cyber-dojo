@@ -1,13 +1,13 @@
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Collection;
-
+import java.util.List;
+import java.util.function.Consumer;
 
 public interface AnagramGenerator {
-    Collection<String> getAnagrams(String word, Collection<String> receiver);
-        
-    default List<String> getAnagrams(String word) {
-        var permutations = getAnagrams(word, new ArrayList<String>());
-        return new ArrayList<>(permutations);
+    void generateAllAnagrams(String word, Consumer<String> receiver);
+
+    default List<String> generateAllAnagrams(String word) {
+        var permutations = new ArrayList<String>();
+        generateAllAnagrams(word, permutations::add);
+        return permutations;
     }
 }

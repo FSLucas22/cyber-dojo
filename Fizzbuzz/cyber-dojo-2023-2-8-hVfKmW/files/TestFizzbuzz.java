@@ -1,9 +1,12 @@
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-class FizzbuzzTest {
+class TestFizzbuzz {
     
     @Test
     public void test_convertValue_returns_same_value_on_non_multiples_of_three_or_five() {
@@ -19,7 +22,7 @@ class FizzbuzzTest {
     public void test_convertValue_returns_fizz_on_multiples_of_three_not_five() {
         int[] cases = {3, 9, 12};
         String expected = "Fizz";
-        
+
         for (int i=0; i < cases.length; i++) {;
             assertEquals(expected,Fizzbuzz.convertValue(cases[i]));
         }

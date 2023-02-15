@@ -1,15 +1,15 @@
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Mock {
-    private Map<String, Long> methodCalls = new HashMap<>();
-    
+    private final Map<String, Long> methodCalls = new HashMap<>();
+
     public long getCallCount(String methodName) {
-        methodCalls.putIfAbsent(methodName, Long.valueOf(0));
+        methodCalls.putIfAbsent(methodName, 0L);
         return methodCalls.get(methodName);
     }
     public void increaseCallCount(String methodName) {
         var callCount = getCallCount(methodName);
-        methodCalls.put(methodName, Long.valueOf(callCount + 1));
+        methodCalls.put(methodName, callCount + 1);
     }
 }

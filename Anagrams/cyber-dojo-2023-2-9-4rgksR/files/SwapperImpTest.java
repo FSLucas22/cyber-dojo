@@ -1,6 +1,9 @@
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SwapperImpTest {
     private Swapper swapper;
@@ -23,7 +26,7 @@ public class SwapperImpTest {
     void test_should_return_element_with_same_letters() {
         var permutation = swapper.swap("ab", 1);
         assertTrue(
-            permutation.contains("a") && permutation.contains("b")
+                permutation.contains("a") && permutation.contains("b")
         );
     }
     @Test

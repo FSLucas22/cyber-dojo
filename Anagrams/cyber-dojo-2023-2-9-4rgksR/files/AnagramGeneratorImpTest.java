@@ -1,41 +1,62 @@
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
-import java.util.HashSet;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class AnagramGeneratorImpTest {
     private MockSwapper swapper;
     private AnagramGenerator generator;
+
     @BeforeEach
     public void setup(){
         swapper = new MockSwapper();
         generator = new AnagramGeneratorImp(swapper);
     }
+
     @Test
     void test_should_have_size_one_with_single_letter() {
-        assertEquals(1, generator.getAnagrams("a").size());
+        AtomicInteger count = new AtomicInteger();
+        generator.generateAllAnagrams("a", s -> count.getAndIncrement());
+        assertEquals(1, count.get());
     }
+
     @Test
     void test_should_call_swapper_once() {
         var word = "ab";
-        generator.getAnagrams(word);
-        assertEquals(1, swapper.getCallCount("swap"));
+        generator.generateAllAnagrams(word, s -> {});
+        Assertions.assertEquals(1, swapper.getCallCount("swap"));
     }
+
     @Test
     void test_should_have_factorial_elements() {
         var word = "abc";
-        var permutations = generator.getAnagrams(word);
-        assertEquals(6, permutations.size());
+        AtomicInteger count = new AtomicInteger();
+        generator.generateAllAnagrams(word, s -> count.getAndIncrement());
+        assertEquals(6, count.get());
     }
+
     @Test
     void test_should_call_swapper_factorial_minus_one_times() {
         var word = "abc";
-        generator.getAnagrams(word);
-        assertEquals(5, swapper.getCallCount("swap"));
+        generator.generateAllAnagrams(word, s -> {});
+        Assertions.assertEquals(5, swapper.getCallCount("swap"));
     }
+
     @Test
     void test_should_contain_original_word() {
         var word = "biro";
-        assertTrue(generator.getAnagrams(word).contains(word));
+        AtomicBoolean containsOriginal = new AtomicBoolean(false);
+        generator.generateAllAnagrams(word, s -> {
+            if (s.equals(word)) {
+                containsOriginal.set(true);
+            }
+        });
+        assertTrue(containsOriginal.get());
     }
 }
