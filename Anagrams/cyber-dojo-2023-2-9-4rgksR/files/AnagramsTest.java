@@ -23,7 +23,7 @@ public class AnagramsTest {
     void should_display_all_anagrams_of_generator() {
         List<String> anagramsList = new ArrayList<>();
         Consumer<String> receiver = anagramsList::add;
-        generator.generateAnagrams(word, receiver);
+        generator.generateAllAnagrams(word, receiver);
         anagrams.showAnagrams(word);
         Assertions.assertEquals(anagramsList.size(), display.getCallCount("show"));
     }

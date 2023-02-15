@@ -22,14 +22,14 @@ public class AnagramGeneratorImpTest {
     @Test
     void test_should_have_size_one_with_single_letter() {
         AtomicInteger count = new AtomicInteger();
-        generator.generateAnagrams("a", s -> count.getAndIncrement());
+        generator.generateAllAnagrams("a", s -> count.getAndIncrement());
         assertEquals(1, count.get());
     }
 
     @Test
     void test_should_call_swapper_once() {
         var word = "ab";
-        generator.generateAnagrams(word, s -> {});
+        generator.generateAllAnagrams(word, s -> {});
         Assertions.assertEquals(1, swapper.getCallCount("swap"));
     }
 
@@ -37,14 +37,14 @@ public class AnagramGeneratorImpTest {
     void test_should_have_factorial_elements() {
         var word = "abc";
         AtomicInteger count = new AtomicInteger();
-        generator.generateAnagrams(word, s -> count.getAndIncrement());
+        generator.generateAllAnagrams(word, s -> count.getAndIncrement());
         assertEquals(6, count.get());
     }
 
     @Test
     void test_should_call_swapper_factorial_minus_one_times() {
         var word = "abc";
-        generator.generateAnagrams(word, s -> {});
+        generator.generateAllAnagrams(word, s -> {});
         Assertions.assertEquals(5, swapper.getCallCount("swap"));
     }
 
@@ -52,7 +52,7 @@ public class AnagramGeneratorImpTest {
     void test_should_contain_original_word() {
         var word = "biro";
         AtomicBoolean containsOriginal = new AtomicBoolean(false);
-        generator.generateAnagrams(word, s -> {
+        generator.generateAllAnagrams(word, s -> {
             if (s.equals(word)) {
                 containsOriginal.set(true);
             }

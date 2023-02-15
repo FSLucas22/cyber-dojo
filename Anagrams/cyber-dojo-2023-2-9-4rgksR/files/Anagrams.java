@@ -6,7 +6,7 @@ public class Anagrams {
         this.display = display;
     }
     public void showAnagrams(String word) {
-        var anagrams = generator.generateAnagrams(word);
+        var anagrams = generator.generateAllAnagrams(word);
         anagrams.forEach(display::show);
     }
 }

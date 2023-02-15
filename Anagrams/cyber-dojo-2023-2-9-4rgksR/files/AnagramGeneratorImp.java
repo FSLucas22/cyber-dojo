@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -14,11 +13,11 @@ public class AnagramGeneratorImp implements AnagramGenerator {
         var remainder = word.substring(1);
         var remainderAnagrams = new ArrayList<String>();
 
-        generateAnagrams(remainder, remainderAnagrams::add);
+        this.generateAllAnagrams(remainder, remainderAnagrams::add);
         remainderAnagrams.forEach(anagram -> receiver.accept(fixedLetter + anagram));
     }
     @Override
-    public void generateAnagrams(String word,
+    public void generateAllAnagrams(String word,
                                  Consumer<String> receiver) {
         Objects.requireNonNull(word, "A palavra não pode ser nula.");
 
