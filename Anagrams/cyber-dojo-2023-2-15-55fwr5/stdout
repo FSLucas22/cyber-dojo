@@ -1,0 +1,51 @@
+biro
+bior
+brio
+broi
+bori
+boir
+ibro
+ibor
+irbo
+irob
+iorb
+iobr
+ribo
+riob
+rbio
+rboi
+robi
+roib
+oirb
+oibr
+orib
+orbi
+obri
+obir
+.
++-- JUnit Jupiter [OK]
+| '-- AnagramGeneratorTest [OK]
+|   +-- test_should_have_two_elements_for_two_letters() [OK]
+|   +-- test_should_contain_all_anagrams_starting_with_first_letter() [OK]
+|   +-- test_should_return_list_with_same_word_for_empty_word() [OK]
+|   +-- test_should_countain_all_anagrams_starting_with_last_letter() [OK]
+|   +-- test_should_display_all_anagrams() [OK]
+|   +-- test_should_contain_all_anagrams_starting_with_second_letter() [OK]
+|   +-- test_should_return_list_with_same_letter_for_single_letter() [OK]
+|   '-- test_should_contain_reversed_word() [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 268 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         8 tests found           ]
+[         0 tests skipped         ]
+[         8 tests started         ]
+[         0 tests aborted         ]
+[         8 tests successful      ]
+[         0 tests failed          ]
+
