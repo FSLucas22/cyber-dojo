@@ -1,0 +1,21 @@
+{
+  "display_name": "Java, Mockito",
+  "image_name": "cyberdojofoundation/java_mockito:4170a59",
+  "filename_extension": [
+    ".java"
+  ],
+  "max_seconds": 10,
+  "tab_size": 4,
+  "exercise": "Anagrams",
+  "version": 2,
+  "created": [
+    2023,
+    2,
+    17,
+    4,
+    10,
+    33,
+    928521
+  ],
+  "id": "PzhqWZ"
+}
